@@ -3,26 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja strona</title>
+
+    <title>AGARTHA</title>
 
     <style>
-        html, body {
+        * {
             margin: 0;
-            width: 100%;
-            height: 100%;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+
+            /* TŁO */
             background-image: url("tlo.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
+
+            font-family: Arial, sans-serif;
+        }
+
+        /* NAPIS W LEWYM GÓRNYM ROGU */
+        .haslo {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+
+            color: red;
+            font-size: 26px;
+            font-weight: bold;
+
+            text-shadow: 0 0 10px black;
+
+            z-index: 10;
+        }
+
+        /* ZNAK */
+        .znak {
+            position: absolute;
+
+            width: 450px;
+            height: 450px;
+
+            left: 50%;
+            top: 50%;
+
+            object-fit: contain;
+
+            animation: obrot 15s linear infinite;
+        }
+
+        /* POWOLNY OBRÓT W PRAWO */
+        @keyframes obrot {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
         }
     </style>
 </head>
 
 <body>
+
+    <div class="haslo">
+        AGARTHA ISTNIEJE<br>
+        ZAD NAS UCISZA!
+    </div>
+
+    <img src="znak.png" class="znak" alt="Znak">
 
 </body>
 </html>
