@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>AGARTHA</title>
 
     <style>
@@ -14,11 +13,10 @@
         }
 
         body {
-            width: 100vw;
+            width: 100%;
             height: 100vh;
             overflow: hidden;
 
-            /* TŁO */
             background-image: url("tlo.jpg");
             background-size: cover;
             background-position: center;
@@ -27,44 +25,68 @@
             font-family: Arial, sans-serif;
         }
 
-        /* NAPIS W LEWYM GÓRNYM ROGU */
-        .haslo {
+        /* NAPIS */
+        .napis {
             position: absolute;
             top: 25px;
-            left: 25px;
+            left: 30px;
 
-            color: red;
-            font-size: 26px;
+            font-size: 32px;
             font-weight: bold;
+            letter-spacing: 4px;
 
-            text-shadow: 0 0 10px black;
+            background: linear-gradient(
+                90deg,
+                #ff0000,
+                #ff7b00,
+                #ffff00,
+                #00ff00,
+                #00ffff,
+                #0066ff,
+                #aa00ff,
+                #ff00aa
+            );
 
-            z-index: 10;
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation: kolory 5s ease infinite;
         }
 
         /* ZNAK */
         .znak {
             position: absolute;
+            top: 25px;
+            right: 30px;
 
-            width: 450px;
-            height: 450px;
+            width: 90px;
+            height: 90px;
 
-            left: 50%;
-            top: 50%;
-
-            object-fit: contain;
-
-            animation: obrot 15s linear infinite;
+            animation: obrot 6s linear infinite;
         }
 
-        /* POWOLNY OBRÓT W PRAWO */
         @keyframes obrot {
             from {
-                transform: translate(-50%, -50%) rotate(0deg);
+                transform: rotate(0deg);
             }
 
             to {
-                transform: translate(-50%, -50%) rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes kolory {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
             }
         }
     </style>
@@ -72,12 +94,11 @@
 
 <body>
 
-    <div class="haslo">
-        AGARTHA ISTNIEJE<br>
-        ZAD NAS UCISZA!
+    <div class="napis">
+        AGARTHA IST
     </div>
 
-    <img src="znak.png" class="znak" alt="Znak">
+    <img class="znak" src="znak.png" alt="Znak">
 
 </body>
 </html>
