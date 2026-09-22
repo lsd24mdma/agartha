@@ -33,7 +33,7 @@
 
             font-size: 32px;
             font-weight: bold;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
 
             background: linear-gradient(
                 90deg,
@@ -57,13 +57,66 @@
         /* ZNAK */
         .znak {
             position: absolute;
-            top: 25px;
+            top: 20px;
             right: 30px;
 
-            width: 90px;
-            height: 90px;
+            width: 150px;
+            height: 150px;
 
             animation: obrot 6s linear infinite;
+        }
+
+        /* OBRAZEK NA DOLE */
+        .obrazek {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+
+            width: 110px;
+            height: auto;
+
+            opacity: 0.9;
+        }
+
+        /* PRZYCISK */
+        .przycisk {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            padding: 12px 25px;
+
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+
+            border-radius: 12px;
+
+            background: linear-gradient(
+                90deg,
+                #ff0000,
+                #ff7b00,
+                #ffff00,
+                #00ff00,
+                #00ffff,
+                #0066ff,
+                #aa00ff,
+                #ff00aa
+            );
+
+            background-size: 400% 400%;
+            animation: kolory 5s ease infinite;
+
+            box-shadow: 0 0 15px rgba(255,255,255,0.5);
+
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .przycisk:hover {
+            transform: translateX(-50%) scale(1.08);
+            box-shadow: 0 0 25px rgba(255,255,255,0.8);
         }
 
         @keyframes obrot {
@@ -95,10 +148,20 @@
 <body>
 
     <div class="napis">
-        AGARTHA IST
+        AGARTHA ISTNIEJE, RZĄD NAS UCISZA
     </div>
 
     <img class="znak" src="znak.png" alt="Znak">
+
+    <img class="obrazek" src="obrazek.png" alt="Obrazek">
+
+    <a
+        class="przycisk"
+        href="https://www.angels-heaven.org/english/default_en.htm"
+        target="_blank"
+    >
+        WEJDŹ NA STRONĘ
+    </a>
 
 </body>
 </html>
