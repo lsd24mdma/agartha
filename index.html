@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -125,5 +124,124 @@
 
             box-shadow: 0 0 15px rgba(255,255,255,0.5);
 
-            transition: tra
-```
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .przycisk:hover {
+            transform: translateX(-50%) scale(1.08);
+            box-shadow: 0 0 25px rgba(255,255,255,0.8);
+        }
+
+        /* PRZYCISK MUZYKA */
+        .muzyka-przycisk {
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            padding: 12px 22px;
+
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+
+            border: none;
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            background: linear-gradient(
+                90deg,
+                #ff0000,
+                #ff7b00,
+                #ffff00,
+                #00ff00,
+                #00ffff,
+                #0066ff,
+                #aa00ff,
+                #ff00aa
+            );
+
+            background-size: 400% 400%;
+            animation: kolory 5s ease infinite;
+
+            box-shadow: 0 0 15px rgba(255,255,255,0.5);
+
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .muzyka-przycisk:hover {
+            transform: translateY(-50%) scale(1.08);
+            box-shadow: 0 0 25px rgba(255,255,255,0.8);
+        }
+
+        @keyframes obrot {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes kolory {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="napis">
+        AGARTHA ISTNIEJE, RZĄD NAS UCISZA
+    </div>
+
+    <img class="znak" src="znak.png" alt="Znak">
+
+    <img class="obrazek" src="obrazek.png" alt="Obrazek">
+
+    <img class="monster" src="monster.png" alt="Monster">
+
+    <!-- MUZYKA -->
+    <audio id="muzyka" src="muzyka.mp3" loop></audio>
+
+    <button class="muzyka-przycisk" onclick="muzykaToggle()">
+        ZAGRAJ MUZYKĘ
+    </button>
+
+    <a
+        class="przycisk"
+        href="https://www.angels-heaven.org/english/default_en.htm"
+        target="_blank"
+    >
+        WEJDŹ NA STRONĘ
+    </a>
+
+    <script>
+        const muzyka = document.getElementById("muzyka");
+        const przyciskMuzyka = document.querySelector(".muzyka-przycisk");
+
+        function muzykaToggle() {
+            if (muzyka.paused) {
+                muzyka.play();
+                przyciskMuzyka.textContent = "ZATRZYMAJ MUZYKĘ";
+            } else {
+                muzyka.pause();
+                przyciskMuzyka.textContent = "ZAGRAJ MUZYKĘ";
+            }
+        }
+    </script>
+
+</body>
+</html>
