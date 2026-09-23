@@ -25,7 +25,7 @@
             font-family: Arial, sans-serif;
         }
 
-        /* NAPIS */
+        /* GŁÓWNY NAPIS */
         .napis {
             position: absolute;
             top: 25px;
@@ -54,6 +54,20 @@
             animation: kolory 5s ease infinite;
         }
 
+        /* NAPIS POD AGARTHĄ */
+        .podnapis {
+            position: absolute;
+            top: 70px;
+            left: 30px;
+
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+            color: white;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+
         /* ZNAK */
         .znak {
             position: absolute;
@@ -78,7 +92,7 @@
             opacity: 0.9;
         }
 
-        /* PLAN - POMIĘDZY OBRAZKIEM A PRZYCISKIEM */
+        /* PLAN */
         .plan {
             position: absolute;
             bottom: 15px;
@@ -217,6 +231,10 @@
 
     <div class="napis">
         AGARTHA ISTNIEJE, RZĄD NAS UCISZA
+    </div>
+
+    <div class="podnapis">
+        CZIPUJĄ NAM MÓZGI
     </div>
 
     <img class="znak" src="znak.png" alt="Znak">
